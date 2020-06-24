@@ -42,23 +42,18 @@ someinternalhost_IP = 10.166.0.3
 testapp_IP = 35.228.74.27
 testapp_port = 9292
  - для проверки startup.sh можно воспользоваться командой
- 	``` gcloud compute instances create reddit-app-2 --boot-disk-size=10GB \
-		--image-family ubuntu-1604-lts --image-project=ubuntu-os-cloud \
-		--machine-type=g1-small --tags puma-server --restart-on-failure \
-		--metadata-from-file startup-script=startup.sh ```
+``` gcloud compute instances create reddit-app-2 --boot-disk-size=10GB --image-family ubuntu-1604-lts --image-project=ubuntu-os-cloud --machine-type=g1-small --tags puma-server --restart-on-failure --metadata-from-file startup-script=startup.sh ```
+
  - запуск startup.sh с использованием
- 	``` gcloud compute instances create reddit-app-2 --boot-disk-size=10GB \
-		--image-family ubuntu-1604-lts --image-project=ubuntu-os-cloud \
-		--machine-type=g1-small --tags puma-server --restart-on-failure \
-		--metadata startup-script-url=gs://blase-bucket/startup.sh  ```
+``` gcloud compute instances create reddit-app-2 --boot-disk-size=10GB --image-family ubuntu-1604-lts --image-project=ubuntu-os-cloud --machine-type=g1-small --tags puma-server --restart-on-failure --metadata startup-script-url=gs://blase-bucket/startup.sh  ```
 
 ## Дополнительное задание
  - посмотреть список правил
-	``` gcloud compute firewall-rules list ```
- - удаление правила созданного через веб интерфейс
-	``` gcloud compute firewall-rules delete default-puma-server ```
- - создание нового правила
-	```  gcloud compute firewall-rules create default-puma-server --allow tcp:9292 --description 'puma server' ```
+``` gcloud compute firewall-rules list ```
+- удаление правила созданного через веб интерфейс
+``` gcloud compute firewall-rules delete default-puma-server ```
+- создание нового правила
+```  gcloud compute firewall-rules create default-puma-server --allow tcp:9292 --description 'puma server' ```
 
 ## PR checklist
  - [ ] Выставил label с номером домашнего задания
