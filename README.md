@@ -58,3 +58,36 @@ testapp_port = 9292
 ## PR checklist
  - [ ] Выставил label с номером домашнего задания
  - [ ] Выставил label с темой домашнего задания
+
+# Выполнено ДЗ №5
+
+СборкаобразовVM припомощи Packer
+
+# В процессе сделано:
+
+- установлен Packer
+- создан ADC с помощью gcloud
+- создано 2 Packer template:
+  - ubuntu16.json
+  - immutable.json
+- параметризована часть переменных в шаблонах, в рамках самостоятельной работы
+- создан variables.json для переопределния переменных
+- выполнены задания со *
+
+## Как проверить работоспособность:
+
+- проверить корректность шаблонов можно командами
+```
+	packer validate .\ubuntu16.json
+	packer validate .\immutable.json
+```
+- проверить выполнение шаблона
+```
+	packer build .\ubuntu16.json -var-file=variables.json
+	packer build .\immutable.json -var-file=variables.json -var 'source_image_family=reddit-base'
+```
+- далее надо выполнить скрипт create-reddit-vm.sh
+
+## PR checklist
+ - [ ] Выставил label с номером домашнего задания
+ - [ ] Выставил label с темой домашнего задания

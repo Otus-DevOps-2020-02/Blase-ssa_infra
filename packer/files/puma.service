@@ -1,0 +1,11 @@
+[Unit]
+Description=Puma daemon
+
+[Service]
+Type=simple
+WorkingDirectory=~puma/reddit
+ExecStart=/usr/local/bin/puma
+
+
+[Install]
+WantedBy=multi-user.target
