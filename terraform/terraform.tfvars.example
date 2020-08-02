@@ -1,0 +1,8 @@
+project          = "your_project_id"
+public_key_path  = "~/.ssh/appuser.pub"
+disk_image       = "reddit-base-###"
+region           = "europe-north1"
+zone             = "europe-north1-a"
+private_key_path = "~/.ssh/appuser.rsa"
+service_port     = 9292
+vm_count         = 2
