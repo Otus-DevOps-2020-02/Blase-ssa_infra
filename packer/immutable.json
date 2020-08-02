@@ -35,7 +35,7 @@
         },
         {
             "type": "file",
-            "source": "file/puma.service",
+            "source": "files/puma.service",
             "destination": "/tmp"
         },
         {
